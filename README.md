@@ -54,8 +54,8 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 | Clients analysés après préparation | 2 232 (8 lignes écartées sur 2 240) |
 | Taux de réponse à la dernière campagne | 14,9 % |
 | Nombre de segments retenus | 4 (méthode du coude, silhouette de 0,24) |
-| Qualité du score (AUC) | `[0,XX]` |
-| Part des répondants captée en ciblant 30 % de la base | `[XX] %` |
+| Qualité du score (AUC) | 0,90 sur des clients non vus à l'apprentissage |
+| Part des répondants captée en ciblant 30 % de la base | 85 % (48 % avec les 10 % les mieux scorés) |
 | Résultat d'un envoi à toute la base | `[X XXX] u.m.` |
 | Résultat d'un envoi ciblé sur le top 30 % | `[X XXX] u.m.` |
 
@@ -93,7 +93,7 @@ customer-segmentation-campaign-scoring/
 │   ├── 01_preparation.ipynb      préparation des données
 │   ├── 02_comportements.ipynb    analyse des comportements d'achat
 │   ├── 03_segmentation.ipynb     segmentation en 4 segments
-│   ├── 04_score.ipynb            à venir
+│   ├── 04_score.ipynb            score d'appétence
 │   └── 05_roi.ipynb              à venir
 ├── outputs/
 │   └── clients_prepares.csv      base préparée, utilisée par le dashboard
