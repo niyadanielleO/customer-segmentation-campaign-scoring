@@ -53,7 +53,7 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 |---|---|
 | Clients analysés après préparation | 2 232 (8 lignes écartées sur 2 240) |
 | Taux de réponse à la dernière campagne | 14,9 % |
-| Nombre de segments retenus | `[X]` |
+| Nombre de segments retenus | 4 (méthode du coude, silhouette de 0,24) |
 | Qualité du score (AUC) | `[0,XX]` |
 | Part des répondants captée en ciblant 30 % de la base | `[XX] %` |
 | Résultat d'un envoi à toute la base | `[X XXX] u.m.` |
@@ -61,9 +61,12 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 
 ### Segments
 
-| Segment | Part de la base | Portrait | Taux de réponse |
-|---|---|---|---|
-| `[nom]` | `[XX] %` | `[description]` | `[XX] %` |
+| Segment | Part de la base | Part du chiffre d'affaires | Taux de réponse | Portrait |
+|---|---|---|---|---|
+| Clients premium | 24 % | 53 % | 26 % | Foyers aisés presque sans enfant, plus forte dépense, peu sensibles aux promotions, adeptes du catalogue |
+| Réguliers amateurs de vin | 27 % | 37 % | 13 % | Revenus intermédiaires, achats fréquents sur tous les canaux, le vin représente 58 % du panier |
+| Familles chasseuses de promotions | 21 % | 7 % | 16 % | Foyers avec près de deux enfants, un achat sur deux en promotion, très présents sur le site |
+| Petits budgets occasionnels | 28 % | 3 % | 7 % | Clients plus jeunes aux revenus modestes, achats rares et faibles |
 
 Dashboard Tableau Public : `[lien à ajouter]`
 
@@ -88,8 +91,8 @@ customer-segmentation-campaign-scoring/
 │   └── marketing_campaign.csv    à télécharger (non versionné)
 ├── notebooks/
 │   ├── 01_preparation.ipynb      préparation des données
-│   ├── 02_comportements.ipynb    à venir
-│   ├── 03_segmentation.ipynb     à venir
+│   ├── 02_comportements.ipynb    analyse des comportements d'achat
+│   ├── 03_segmentation.ipynb     segmentation en 4 segments
 │   ├── 04_score.ipynb            à venir
 │   └── 05_roi.ipynb              à venir
 ├── outputs/
