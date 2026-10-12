@@ -1,0 +1,7 @@
+# Données sources (non versionnées)
+data/*.csv
+
+# Environnement Python et fichiers temporaires
+.venv/
+.ipynb_checkpoints/
+.DS_Store
