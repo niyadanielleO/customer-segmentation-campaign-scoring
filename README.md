@@ -1,0 +1,115 @@
+# Segmentation et score d'appétence : qui cibler, et combien ça rapporte
+
+> Segmentation d'une base de 2 240 clients d'une enseigne de distribution, modèle de prédiction de la réponse aux campagnes et simulation du retour sur investissement d'un envoi ciblé.
+
+**Statut :** en cours · **Outils :** Python (pandas, scikit-learn), Tableau Public
+
+---
+
+## 1. Contexte
+
+Une enseigne de distribution alimentaire vend en magasin, sur son site web et par catalogue. Elle a mené six campagnes marketing, envoyées à l'ensemble de sa base sans ciblage, avec des taux d'acceptation compris entre 1 et 15 % environ.
+
+La direction marketing veut mieux connaître ses clients et savoir si elle peut obtenir autant de réponses en contactant moins de monde.
+
+La note de cadrage complète est disponible dans [`docs/brief_cadrage.md`](docs/brief_cadrage.md).
+
+## 2. Questions traitées
+
+1. Quels profils d'achat se dégagent, selon les canaux, les catégories de produits et le foyer ?
+2. Peut-on regrouper la base en quatre à cinq segments compréhensibles et actionnables ?
+3. Peut-on estimer, pour chaque client, sa probabilité de répondre à la prochaine campagne ?
+4. Quel résultat financier obtient-on en ne ciblant que les clients les mieux scorés ?
+
+## 3. Données
+
+| Élément | Détail |
+|---|---|
+| Jeu de données | *Customer Personality Analysis* — Kaggle |
+| Lien | https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis |
+| Fichier | `marketing_campaign.csv` (séparateur : tabulation) |
+| Volume | 2 240 clients, 29 variables |
+| Variables | Profil (âge, éducation, situation familiale, revenu, enfants), dépenses sur deux ans par catégorie, achats par canal, réponses à six campagnes |
+| Hypothèses économiques | Coût d'un contact : 3 u.m. · Revenu par réponse : 11 u.m. (colonnes `Z_CostContact` et `Z_Revenue`) |
+
+Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, téléchargez le fichier sur Kaggle et placez-le dans le dossier `data/`.
+
+## 4. Méthode
+
+| Étape | Ce qui est fait | Notebook |
+|---|---|---|
+| Préparation | Revenus manquants, valeurs aberrantes, recodage, création de variables (âge, ancienneté, foyer, dépense totale, parts par canal et par catégorie, part des achats en promotion) | `01_preparation` |
+| Comportements | Profils d'achat par canal, catégorie, revenu et composition du foyer | `02_comportements` |
+| Segmentation | Standardisation, k-means, choix du nombre de segments (méthode du coude, score de silhouette), portrait de chaque segment | `03_segmentation` |
+| Score d'appétence | Régression logistique sur la réponse à la dernière campagne, AUC, variables déterminantes, courbe de gains | `04_score` |
+| Performance et ROI | Taux d'acceptation par campagne et par segment, simulation de ciblage par déciles, analyse de sensibilité | `05_roi` |
+| Restitution | Dashboard Tableau Public en trois vues : vue d'ensemble, segments, campagnes et ciblage | `tableau/` |
+
+## 5. Résultats
+
+*À compléter au fil de l'analyse.*
+
+| Indicateur | Valeur |
+|---|---|
+| Clients analysés après préparation | `[X XXX]` |
+| Taux de réponse à la dernière campagne | `[XX,X] %` |
+| Nombre de segments retenus | `[X]` |
+| Qualité du score (AUC) | `[0,XX]` |
+| Part des répondants captée en ciblant 30 % de la base | `[XX] %` |
+| Résultat d'un envoi à toute la base | `[X XXX] u.m.` |
+| Résultat d'un envoi ciblé sur le top 30 % | `[X XXX] u.m.` |
+
+### Segments
+
+| Segment | Part de la base | Portrait | Taux de réponse |
+|---|---|---|---|
+| `[nom]` | `[XX] %` | `[description]` | `[XX] %` |
+
+Dashboard Tableau Public : `[lien à ajouter]`
+
+## 6. Recommandations
+
+*À rédiger à partir des résultats.*
+
+## 7. Limites
+
+- Les données datent de 2012-2014 et proviennent d'un jeu public : le projet illustre une méthode, il ne décrit pas un marché actuel.
+- Le score est entraîné sur la dernière campagne ; il suppose que la suivante sera comparable.
+- Les hypothèses de coût et de revenu sont simplifiées et ne tiennent compte ni de la marge réelle ni de la valeur à long terme d'un client.
+
+## 8. Structure du dépôt
+
+```
+customer-segmentation-campaign-scoring/
+├── README.md
+├── docs/
+│   └── brief_cadrage.md          note de cadrage du projet
+├── data/
+│   └── marketing_campaign.csv    à télécharger (non versionné)
+├── notebooks/
+│   ├── 01_preparation.ipynb      préparation des données
+│   ├── 02_comportements.ipynb    à venir
+│   ├── 03_segmentation.ipynb     à venir
+│   ├── 04_score.ipynb            à venir
+│   └── 05_roi.ipynb              à venir
+├── outputs/
+│   └── clients_prepares.csv      base préparée, utilisée par le dashboard
+└── tableau/
+    └── lien vers le dashboard publié
+```
+
+## 9. Reproduire l'analyse
+
+```bash
+git clone https://github.com/niyadanielleO/customer-segmentation-campaign-scoring.git
+cd customer-segmentation-campaign-scoring
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+Placer ensuite `marketing_campaign.csv` dans `data/` et exécuter les notebooks dans l'ordre.
+
+---
+
+**Danielle OUATTARA** · [LinkedIn](https://www.linkedin.com/in/niyadanielleouattara/) · [Autres projets](https://github.com/niyadanielleO)
