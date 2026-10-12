@@ -51,8 +51,8 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 
 | Indicateur | Valeur |
 |---|---|
-| Clients analysés après préparation | `[X XXX]` |
-| Taux de réponse à la dernière campagne | `[XX,X] %` |
+| Clients analysés après préparation | 2 232 (8 lignes écartées sur 2 240) |
+| Taux de réponse à la dernière campagne | 14,9 % |
 | Nombre de segments retenus | `[X]` |
 | Qualité du score (AUC) | `[0,XX]` |
 | Part des répondants captée en ciblant 30 % de la base | `[XX] %` |
