@@ -109,4 +109,4 @@ Placer ensuite `marketing_campaign.csv` dans `data/` et exécuter les notebooks 
 
 ---
 
-**Danielle OUATTARA** · [LinkedIn](https://www.linkedin.com/in/ndanielleouattara/) · [Mes autres projets](https://github.com/niyadanielleO)
+**N. Danielle OUATTARA** · [LinkedIn](https://www.linkedin.com/in/ndanielleouattara/) · [Mes autres projets](https://github.com/niyadanielleO)
