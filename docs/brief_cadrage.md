@@ -1,7 +1,7 @@
 # Note de cadrage — Segmentation clients et ciblage des campagnes
 
 **Projet :** Segmentation et score d'appétence d'une base clients retail
-**Auteure :** Danielle OUATTARA
+**Auteure :** Niya C. Danielle Ouattara
 **Version :** 1.0 — octobre 2026
 
 ---
