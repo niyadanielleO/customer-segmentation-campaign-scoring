@@ -51,7 +51,7 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 | Clients analysés après préparation | 2 232 (8 lignes écartées sur 2 240) |
 | Taux de réponse à la dernière campagne | 14,9 % |
 | Nombre de segments retenus | 4 (méthode du coude, silhouette de 0,24) |
-| Qualité du score (AUC) | 0,90 sur des clients non vus à l'apprentissage |
+| Qualité du score (AUC) | 0,90 sur des clients non vus à l'apprentissage, pour un taux de réponse de base de 14,9 % (un score aléatoire obtiendrait 0,50) |
 | Part des répondants captée en ciblant 30 % de la base | 85 % (48 % avec les 10 % les mieux scorés) |
 | Résultat d'un envoi à toute la base | −3 032 u.m. (ROI −45 %) |
 | Résultat d'un envoi ciblé sur le top 20 % (optimum) | +1 203 u.m. (ROI +90 %), avec 70 % des répondants et 80 % de contacts en moins |
@@ -82,6 +82,7 @@ Les données ne sont pas incluses dans ce dépôt. Pour reproduire l'analyse, t�
 ```
 customer-segmentation-campaign-scoring/
 ├── README.md
+├── requirements.txt
 ├── docs/
 │   └── brief_cadrage.md          note de cadrage du projet
 ├── data/
@@ -102,7 +103,8 @@ git clone https://github.com/niyadanielleO/customer-segmentation-campaign-scorin
 cd customer-segmentation-campaign-scoring
 python3 -m venv .venv
 source .venv/bin/activate
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+pip install -r requirements.txt
+jupyter notebook
 ```
 
 Placer ensuite `marketing_campaign.csv` dans `data/` et exécuter les notebooks dans l'ordre.
